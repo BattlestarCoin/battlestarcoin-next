@@ -80,7 +80,7 @@ int64_t UpdateTime(CBlock* pblock, const Consensus::Params& consensusParams, con
 // miner's coin base reward (POW)
 CAmount GetProofOfWorkReward()
 {
-    CAmount nSubsidy = 10000 * COIN;
+    CAmount nSubsidy = 1 * COIN;
 
     return nSubsidy;
 }
@@ -166,7 +166,7 @@ CBlockTemplate* BlockAssembler::CreateNewBlock(const CScript& scriptPubKeyIn, in
     }
     else {
         coinbaseTx.vout[0].scriptPubKey = scriptPubKeyIn;
-        coinbaseTx.vout[0].nValue = nFees + GetProofOfWorkSubsidy();
+        coinbaseTx.vout[0].nValue = nFees + GetProofOfWorkSubsidy(nHeight);
     }
     coinbaseTx.vin[0].scriptSig = CScript() << nHeight << OP_0;
     pblock->vtx[0] = coinbaseTx;
@@ -585,7 +585,7 @@ void ThreadStakeMiner(CWallet *pwallet, const CChainParams& chainparams)
     LogPrintf("Staking started\n");
 
     // Make this thread recognisable as the mining thread
-    RenameThread("blackcoin-miner");
+    RenameThread("battlestarcoin-miner");
 
     CReserveKey reservekey(pwallet);
 

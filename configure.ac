@@ -7,17 +7,17 @@ define(_CLIENT_VERSION_BUILD, 8)
 define(_CLIENT_VERSION_IS_RELEASE, true)
 define(_COPYRIGHT_YEAR, 2021)
 define(_COPYRIGHT_HOLDERS,[The %s developers])
-define(_COPYRIGHT_HOLDERS_SUBSTITUTION,[[Blackcoin More]])
-AC_INIT([Blackcoin More],[_CLIENT_VERSION_MAJOR._CLIENT_VERSION_MINOR._CLIENT_VERSION_REVISION],[https://gitlab.com/blackcoin/blackcoin-more],[blackcoin-more])
+define(_COPYRIGHT_HOLDERS_SUBSTITUTION,[[BattlestarCoin Next]])
+AC_INIT([BattlestarCoin Next],[_CLIENT_VERSION_MAJOR._CLIENT_VERSION_MINOR._CLIENT_VERSION_REVISION],[https://github.com/battlestarcoin/battlestarcoin-next],[battlestarcoin-next])
 AC_CONFIG_SRCDIR([src/main.cpp])
 AC_CONFIG_HEADERS([src/config/bitcoin-config.h])
 AC_CONFIG_AUX_DIR([build-aux])
 AC_CONFIG_MACRO_DIR([build-aux/m4])
 
-BITCOIN_DAEMON_NAME=blackmored
-BITCOIN_GUI_NAME=blackmore-qt
-BITCOIN_CLI_NAME=blackmore-cli
-BITCOIN_TX_NAME=blackmore-tx
+BITCOIN_DAEMON_NAME=batlnextd
+BITCOIN_GUI_NAME=batlnext-qt
+BITCOIN_CLI_NAME=batlnext-cli
+BITCOIN_TX_NAME=batlnext-tx
 
 AC_CANONICAL_HOST
 

@@ -1,43 +1,39 @@
-Blackcoin More
+BattlestarCoin Next
 =============
 
 Setup
 ---------------------
-Blackcoin More is experimental Blackcoin client and it builds the backbone of the network. However, it downloads and stores the entire history of Blackcoin transactions (which is currently several GBs); depending on the speed of your computer and network connection, the synchronization process can take anywhere from a few hours to a day or more.
+BattlestarCoin Next is experimental BattlestarCoin client and it builds the backbone of the network. However, it downloads and stores the entire history of BattlestarCoin transactions (which is currently several GBs); depending on the speed of your computer and network connection, the synchronization process can take anywhere from a few hours to a day or more.
 
-To download Blackcoin More, visit [blackcoinmore.org](https://blackcoinmore.org).
+To download BattlestarCoin Next, visit [battlestarcoin.org](https://battlestarcoin.org).
 
 Running
 ---------------------
-The following are some helpful notes on how to run Blackcoin on your native platform.
+The following are some helpful notes on how to run BattlestarCoin on your native platform.
 
 ### Unix
 
 Unpack the files into a directory and run:
 
-- `bin/blackmore-qt` (GUI) or
-- `bin/blackmored` (headless)
+- `bin/batlnext-qt` (GUI) or
+- `bin/batlnextd` (headless)
 
 ### Windows
 
-Unpack the files into a directory, and then run blackmore-qt.exe.
+Unpack the files into a directory, and then run batlnext-qt.exe.
 
 ### OS X
 
-Drag Blackcoin-More to your applications folder, and then run Blackcoin-More.
+Drag BattlestarCoin-Next to your applications folder, and then run BattlestarCoin-Next.
 
 ### Need Help?
 
 * See the documentation at the [Bitcoin Wiki](https://en.bitcoin.it/wiki/Main_Page)
 for help and more information.
-* Ask for help on [#blackcoin](http://webchat.freenode.net?channels=blackcoin) on Freenode. If you don't have an IRC client use [webchat here](http://webchat.freenode.net?channels=blackcoin).
-* Ask for help in [Blackcoin room](https://gitter.im/BlackCoin_Hub) on Gitter.
-* Ask for help in [/r/blackcoin/](https://nm.reddit.com/r/blackcoin/) on Reddit.
-* Ask for help on the [BitcoinTalk](https://bitcointalk.org/) forums, in the [Blackcoin topic](https://bitcointalk.org/index.php?topic=3017838.new#new).
 
 Building
 ---------------------
-The following are developer notes on how to build Blackcoin on your native platform. They are not complete guides, but include notes on the necessary libraries, compile flags, etc.
+The following are developer notes on how to build BattlestarCoin on your native platform. They are not complete guides, but include notes on the necessary libraries, compile flags, etc.
 
 - [OS X Build Notes](build-osx.md)
 - [Unix Build Notes](build-unix.md)
@@ -47,7 +43,7 @@ The following are developer notes on how to build Blackcoin on your native platf
 
 Development
 ---------------------
-The Blackcoin repo's [root README](/README.md) contains relevant information on the development process and automated testing.
+The BattlestarCoin repo's [root README](/README.md) contains relevant information on the development process and automated testing.
 
 - [Developer Notes](developer-notes.md)
 - [Multiwallet Qt Development](multiwallet-qt.md)
@@ -62,11 +58,6 @@ The Blackcoin repo's [root README](/README.md) contains relevant information on 
 - [BIPS](bips.md)
 - [Dnsseed Policy](dnsseed-policy.md)
 - [Benchmarking](benchmarking.md)
-
-### Resources
-* Discuss on the [BitcoinTalk](https://bitcointalk.org/) forums, in the [Blackcoin topic](https://bitcointalk.org/index.php?topic=3017838.new#new).
-* Discuss Blackcoin development in [Blackcoin room](https://gitter.im/BlackCoin_Hub) on Gitter.
-* Discuss Blackcoin development in [Blackcoin team](https://keybase.io/team/blackcoin) on Keybase.
 
 ### Miscellaneous
 - [Assets Attribution](assets-attribution.md)

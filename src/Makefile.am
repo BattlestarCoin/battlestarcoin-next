@@ -65,11 +65,11 @@ TESTS =
 BENCHMARKS =
 
 if BUILD_BITCOIND
-  bin_PROGRAMS += blackmored
+  bin_PROGRAMS += batlnextd
 endif
 
 if BUILD_BITCOIN_UTILS
-  bin_PROGRAMS += blackmore-cli blackmore-tx
+  bin_PROGRAMS += batlnext-cli batlnext-tx
 endif
 
 .PHONY: FORCE check-symbols check-security
@@ -383,17 +383,17 @@ libbitcoin_cli_a_SOURCES = \
 nodist_libbitcoin_util_a_SOURCES = $(srcdir)/obj/build.h
 #
 
-# blackmored binary #
-blackmored_SOURCES = bitcoind.cpp
-blackmored_CPPFLAGS = $(AM_CPPFLAGS) $(BITCOIN_INCLUDES)
-blackmored_CXXFLAGS = $(AM_CXXFLAGS) $(PIE_FLAGS)
-blackmored_LDFLAGS = $(RELDFLAGS) $(AM_LDFLAGS) $(LIBTOOL_APP_LDFLAGS)
+# batlnextd binary #
+batlnextd_SOURCES = bitcoind.cpp
+batlnextd_CPPFLAGS = $(AM_CPPFLAGS) $(BITCOIN_INCLUDES)
+batlnextd_CXXFLAGS = $(AM_CXXFLAGS) $(PIE_FLAGS)
+batlnextd_LDFLAGS = $(RELDFLAGS) $(AM_LDFLAGS) $(LIBTOOL_APP_LDFLAGS)
 
 if TARGET_WINDOWS
-blackmored_SOURCES += bitcoind-res.rc
+batlnextd_SOURCES += bitcoind-res.rc
 endif
 
-blackmored_LDADD = \
+batlnextd_LDADD = \
   $(LIBBITCOIN_SERVER) \
   $(LIBBITCOIN_COMMON) \
   $(LIBUNIVALUE) \
@@ -406,37 +406,37 @@ blackmored_LDADD = \
   $(LIBMEMENV) \
   $(LIBSECP256K1)
   
-blackmored_LDADD += $(BOOST_LIBS) $(BDB_LIBS) $(SSL_LIBS) $(CRYPTO_LIBS) $(MINIUPNPC_LIBS) $(EVENT_PTHREADS_LIBS) $(EVENT_LIBS) $(ZMQ_LIBS)
+batlnextd_LDADD += $(BOOST_LIBS) $(BDB_LIBS) $(SSL_LIBS) $(CRYPTO_LIBS) $(MINIUPNPC_LIBS) $(EVENT_PTHREADS_LIBS) $(EVENT_LIBS) $(ZMQ_LIBS)
 
-# blackmore-cli binary #
-blackmore_cli_SOURCES = bitcoin-cli.cpp
-blackmore_cli_CPPFLAGS = $(AM_CPPFLAGS) $(BITCOIN_INCLUDES) $(EVENT_CFLAGS)
-blackmore_cli_CXXFLAGS = $(AM_CXXFLAGS) $(PIE_FLAGS)
-blackmore_cli_LDFLAGS = $(RELDFLAGS) $(AM_LDFLAGS) $(LIBTOOL_APP_LDFLAGS)
+# batlnext-cli binary #
+batlnext_cli_SOURCES = bitcoin-cli.cpp
+batlnext_cli_CPPFLAGS = $(AM_CPPFLAGS) $(BITCOIN_INCLUDES) $(EVENT_CFLAGS)
+batlnext_cli_CXXFLAGS = $(AM_CXXFLAGS) $(PIE_FLAGS)
+batlnext_cli_LDFLAGS = $(RELDFLAGS) $(AM_LDFLAGS) $(LIBTOOL_APP_LDFLAGS)
 
 if TARGET_WINDOWS
-blackmore_cli_SOURCES += bitcoin-cli-res.rc
+batlnext_cli_SOURCES += bitcoin-cli-res.rc
 endif
 
-blackmore_cli_LDADD = \
+batlnext_cli_LDADD = \
   $(LIBBITCOIN_CLI) \
   $(LIBUNIVALUE) \
   $(LIBBITCOIN_UTIL) \
   $(LIBBITCOIN_CRYPTO)
 
-blackmore_cli_LDADD += $(BOOST_LIBS) $(SSL_LIBS) $(CRYPTO_LIBS) $(EVENT_LIBS)
+batlnext_cli_LDADD += $(BOOST_LIBS) $(SSL_LIBS) $(CRYPTO_LIBS) $(EVENT_LIBS)
 
-# blackmore-tx binary #
-blackmore_tx_SOURCES = bitcoin-tx.cpp
-blackmore_tx_CPPFLAGS = $(AM_CPPFLAGS) $(BITCOIN_INCLUDES)
-blackmore_tx_CXXFLAGS = $(AM_CXXFLAGS) $(PIE_FLAGS)
-blackmore_tx_LDFLAGS = $(RELDFLAGS) $(AM_LDFLAGS) $(LIBTOOL_APP_LDFLAGS)
+# batlnext-tx binary #
+batlnext_tx_SOURCES = bitcoin-tx.cpp
+batlnext_tx_CPPFLAGS = $(AM_CPPFLAGS) $(BITCOIN_INCLUDES)
+batlnext_tx_CXXFLAGS = $(AM_CXXFLAGS) $(PIE_FLAGS)
+batlnext_tx_LDFLAGS = $(RELDFLAGS) $(AM_LDFLAGS) $(LIBTOOL_APP_LDFLAGS)
 
 if TARGET_WINDOWS
-blackmore_tx_SOURCES += bitcoin-tx-res.rc
+batlnext_tx_SOURCES += bitcoin-tx-res.rc
 endif
 
-blackmore_tx_LDADD = \
+batlnext_tx_LDADD = \
   $(LIBUNIVALUE) \
   $(LIBBITCOIN_COMMON) \
   $(LIBBITCOIN_UTIL) \
@@ -444,7 +444,7 @@ blackmore_tx_LDADD = \
   $(LIBBITCOIN_CRYPTO) \
   $(LIBSECP256K1)
 
-blackmore_tx_LDADD += $(BOOST_LIBS) $(CRYPTO_LIBS)
+batlnext_tx_LDADD += $(BOOST_LIBS) $(CRYPTO_LIBS)
 #
 
 # bitcoinconsensus library #

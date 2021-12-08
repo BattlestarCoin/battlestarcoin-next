@@ -170,7 +170,7 @@ QString bitcoinURIScheme(const CChainParams &params, bool useCashAddr)
 {
     if (!useCashAddr)
     {
-        return "blackcoin";
+        return "battlestarcoin";
     }
     return QString::fromStdString(params.CashAddrPrefix());
 }
@@ -262,7 +262,7 @@ bool parseBitcoinURI(const QString &scheme, const QUrl &uri, SendCoinsRecipient 
 bool parseBitcoinURI(const QString &scheme, QString uri, SendCoinsRecipient *out)
 {
     //
-    //    Cannot handle this later, because blackcoin://
+    //    Cannot handle this later, because battlestarcoin://
     //    will cause Qt to see the part after // as host,
     //    which will lower-case it (and thus invalidate the address).
     if (uri.startsWith(scheme + "://", Qt::CaseInsensitive))

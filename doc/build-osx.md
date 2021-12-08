@@ -24,17 +24,17 @@ In case you want to build the disk image with `make deploy` (.dmg / optional), y
 
 NOTE: Building with Qt4 is still supported, however, could result in a broken UI. Building with Qt5 is recommended.
 
-Build Blackcoin More
+Build BattlestarCoin Next
 ------------------------
 
-1. Clone the blackcoin source code and cd into `blackcoin-more`
+1. Clone the battlestarcoin source code and cd into `battlestarcoin-next`
 
-        git clone https://gitlab.com/blackcoin/blackcoin-more/
-        cd blackcoin-more
+        git clone https://gitlab.com/BattlestarCoin/battlestarcoin-next/
+        cd battlestarcoin-next
 
-2.  Build blackcoin-more:
+2.  Build battlestarcoin-next:
 
-    Configure and build the headless blackcoin binaries as well as the GUI (if Qt is found).
+    Configure and build the headless battlestarcoin binaries as well as the GUI (if Qt is found).
 
     You can disable the GUI build by passing `--without-gui` to configure.
 
@@ -53,37 +53,37 @@ Build Blackcoin More
 Running
 -------
 
-Blackcoin More is now available at `./src/blackmored`
+BattlestarCoin Next is now available at `./src/batlnext`
 
 Before running, it's recommended you create an RPC configuration file.
 
-    echo -e "rpcuser=blackcoinrpc\nrpcpassword=$(xxd -l 16 -p /dev/urandom)" > "/Users/${USER}/Library/Application Support/Blackmore/blackmore.conf"
+    echo -e "rpcuser=batlcoinrpc\nrpcpassword=$(xxd -l 16 -p /dev/urandom)" > "/Users/${USER}/Library/Application Support/Batlnext/batlnext.conf"
 
-    chmod 600 "/Users/${USER}/Library/Application Support/Blackmore/blackmore.conf"
+    chmod 600 "/Users/${USER}/Library/Application Support/Batlnext/batlnext.conf"
 
-The first time you run blackmored, it will start downloading the blockchain. This process could take several hours.
+The first time you run batlnextd, it will start downloading the blockchain. This process could take several hours.
 
 You can monitor the download process by looking at the debug.log file:
 
-    tail -f $HOME/Library/Application\ Support/Blackmore/debug.log
+    tail -f $HOME/Library/Application\ Support/Batlnext/debug.log
 
 Other commands:
 -------
 
-    ./src/blackmored -daemon # Starts the blackcoin daemon.
-    ./src/blackmore-cli --help # Outputs a list of command-line options.
-    ./src/blackmore-cli help # Outputs a list of RPC commands when the daemon is running.
+    ./src/batlnextd -daemon # Starts the battlestarcoin daemon.
+    ./src/batlnext-cli --help # Outputs a list of command-line options.
+    ./src/batlnext-cli help # Outputs a list of RPC commands when the daemon is running.
 
 Using Qt Creator as IDE
 ------------------------
-You can use Qt Creator as an IDE, for blackcoin development.
+You can use Qt Creator as an IDE, for battlestarcoin development.
 Download and install the community edition of [Qt Creator](https://www.qt.io/download/).
 Uncheck everything except Qt Creator during the installation process.
 
 1. Make sure you installed everything through Homebrew mentioned above
 2. Do a proper ./configure --enable-debug
 3. In Qt Creator do "New Project" -> Import Project -> Import Existing Project
-4. Enter "blackmore-qt" as project name, enter src/qt as location
+4. Enter "batlnext-qt" as project name, enter src/qt as location
 5. Leave the file selection as it is
 6. Confirm the "summary page"
 7. In the "Projects" tab select "Manage Kits..."

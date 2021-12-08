@@ -482,6 +482,8 @@ std::string HelpMessage(HelpMessageMode mode)
     strUsage += HelpMessageGroup(_("Staking options:"));
     strUsage += HelpMessageOpt("-staking=<n>", strprintf(_("Enable staking functionality (0-1, default: %u)"), 1));
     strUsage += HelpMessageOpt("-reservebalance=<amount>", _("Keep the specified amount of coins available for spending at all times (default: 0)"));
+    strUsage += HelpMessageOpt("-stakesplit=<amount>", _("Split blocks if higher than this amount, Combine blocks if double this amount (default: 100)"));
+    strUsage += HelpMessageOpt("-stakemaxcombine=<amount>", _("The maximum number of inputs to try and stake at a time (default: 10)"));
 #endif
 
     return strUsage;
@@ -489,8 +491,8 @@ std::string HelpMessage(HelpMessageMode mode)
 
 std::string LicenseInfo()
 {
-    const std::string URL_SOURCE_CODE = "<https://gitlab.com/blackcoin/blackcoin-more>";
-    const std::string URL_WEBSITE = "<https://blackcoinmore.org/>";
+    const std::string URL_SOURCE_CODE = "<https://github.com/battlestarcoin/battlestarcoin-next>";
+    const std::string URL_WEBSITE = "<https://www.battlestarcoin.org>";
     // todo: remove urls from translations on next change
 
     // return FormatParagraph(strprintf(_("Copyright (C) %i-%i %s"), 2009, COPYRIGHT_YEAR, CopyrightHolders())) + "\n" +
@@ -500,7 +502,9 @@ std::string LicenseInfo()
            "\n" +
            FormatParagraph(strprintf("Copyright (C) %i-%i The Blackcoin More Developers", 2018, COPYRIGHT_YEAR)) + "\n" +
            "\n" +
-           FormatParagraph(strprintf(_("Please contribute if you find Blackcoin More useful. "
+           FormatParagraph(strprintf("Copyright (C) %i-%i The BattlestarCoin Developers", 2016, COPYRIGHT_YEAR)) + "\n" +
+           "\n" +
+           FormatParagraph(strprintf(_("Please contribute if you find BattlestarCoin useful. "
                        "Visit %s for further information about the software."),
                URL_WEBSITE)) +
            "\n" +

@@ -1,3 +1,4 @@
+// Copyright (c) 2016-2021 The BattlestarCoin Developers
 // Copyright (c) 2014-2018 The BlackCoin Developers
 // Copyright (c) 2011-2013 The PPCoin developers
 // Distributed under the MIT software license, see the accompanying
@@ -50,7 +51,7 @@ bool CheckStakeBlockTimestamp(int64_t nTimeBlock)
    return CheckCoinStakeTimestamp(nTimeBlock, nTimeBlock);
 }
 
-// BlackCoin kernel protocol v3
+// BattlestarCoin kernel protocol v3
 // coinstake must meet hash target according to the protocol:
 // kernel (input 0) must meet the formula
 //     hash(nStakeModifier + txPrev.nTime + txPrev.vout.hash + txPrev.vout.n + nTime) < bnTarget * nWeight
@@ -71,19 +72,14 @@ bool CheckStakeBlockTimestamp(int64_t nTimeBlock)
 //
 bool CheckStakeKernelHash(const CBlockIndex* pindexPrev, unsigned int nBits, const CCoins* txPrev, const COutPoint& prevout, unsigned int nTimeTx, bool fPrintProofOfStake)
 {
-    if (nTimeTx < txPrev->nTime)  // Transaction timestamp violation
-        return error("CheckStakeKernelHash() : nTime violation");
+    // Weight
+    int64_t nValueIn = txPrev->vout[prevout.n].nValue;
+    if (nValueIn == 0)
+        return false;
 
     // Base target
     arith_uint256 bnTarget;
     bnTarget.SetCompact(nBits);
-
-    // Weighted target
-    int64_t nValueIn = txPrev->vout[prevout.n].nValue;
-    if (nValueIn == 0)
-        return error("CheckStakeKernelHash() : nValueIn = 0");
-    arith_uint256 bnWeight = arith_uint256(nValueIn);
-    bnTarget *= bnWeight;
 
     uint256 nStakeModifier = pindexPrev->nStakeModifier;
 
@@ -103,7 +99,7 @@ bool CheckStakeKernelHash(const CBlockIndex* pindexPrev, unsigned int nBits, con
     }
 
     // Now check if proof-of-stake hash meets target protocol
-    if (UintToArith256(hashProofOfStake) > bnTarget)
+    if (UintToArith256(hashProofOfStake) / nValueIn > bnTarget)
         return false;
 
     if (fDebug && !fPrintProofOfStake)

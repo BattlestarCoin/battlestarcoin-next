@@ -1,12 +1,12 @@
 *.tar.gz
 
 *.exe
-src/blackmore
-src/blackmored
-src/blackmore-cli
-src/blackmore-tx
-src/test/test_blackmore
-src/qt/test/test_blackmore-qt
+src/batlnext
+src/batlnextd
+src/batlnext-cli
+src/batlnext-tx
+src/test/test_batlnext
+src/qt/test/test_batlnext-qt
 
 # autoreconf
 Makefile.in
@@ -45,11 +45,11 @@ src/qt/forms/ui_*.h
 
 src/qt/test/moc*.cpp
 
-src/qt/blackmore-qt.config
-src/qt/blackmore-qt.creator
-src/qt/blackmore-qt.creator.user
-src/qt/blackmore-qt.files
-src/qt/blackmore-qt.includes
+src/qt/batlnext-qt.config
+src/qt/batlnext-qt.creator
+src/qt/batlnext-qt.creator.user
+src/qt/batlnext-qt.files
+src/qt/batlnext-qt.includes
 
 .deps
 .dirstamp
@@ -86,8 +86,8 @@ src/qt/blackmore-qt.includes
 *.qm
 Makefile
 !depends/Makefile
-src/qt/blackmore-qt
-Blackmore-Qt.app
+src/qt/batlnext-qt
+Batlnext-Qt.app
 background.tiff*
 
 # Qt Creator
@@ -95,7 +95,7 @@ Makefile.am.user
 
 # Unit-tests
 Makefile.test
-blackmore-qt_test
+batlnext-qt_test
 src/test/buildenv.py
 
 # Resources cpp
@@ -142,3 +142,5 @@ contrib/devtools/split-debug.sh
 osx_volname
 dist/
 *.background.tiff
+
+.history
